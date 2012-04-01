@@ -1,0 +1,106 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>cat.calidos.maven.ftpserver</groupId>
+	<artifactId>ftpserver-maven-plugin</artifactId>
+	<packaging>maven-plugin</packaging>
+	<version>1.0</version>
+	<name>FTP server launcher</name>
+	<description>
+		Launches an Apache FTP server during the maven lifecycle
+		Includes software by the Apache Software Foundation licensed under the Apache license, see NOTICE for more details
+	</description>
+	<inceptionYear>2011</inceptionYear>
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
+			<comments>Copyright 2011 Daniel Giribet</comments>
+		</license>
+	</licenses>
+	
+	<developers>
+		<developer>
+			<id>danigiri</id>
+			<name>Daniel Giribet</name>
+			<email>dani AT calidos DOT cat</email>
+			<url>http//dani.calidos.com</url>
+			<roles>
+				<role>creator</role>
+			</roles>
+		</developer>
+	</developers>
+
+	<properties>
+	  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+
+	<build>
+		<plugins>
+	      <plugin>
+	          <groupId>org.apache.maven.plugins</groupId>
+	          <artifactId>maven-compiler-plugin</artifactId>
+	          <version>2.0.2</version>
+	          <configuration>
+	            <source>1.5</source>
+		          <target>1.5</target>
+		          </configuration>
+	        </plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+	
+	<!-- plugin deps -->
+	<dependency>
+		<groupId>org.apache.maven</groupId>
+		<artifactId>maven-project</artifactId>
+		<version>2.2.1</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.maven</groupId>
+		<artifactId>maven-plugin-api</artifactId>
+		<version>2.2.1</version>
+	</dependency>
+
+	<!-- Apache FTP server engine -->
+	<dependency>
+		<groupId>org.apache.ftpserver</groupId>
+		<artifactId>ftpserver-core</artifactId>
+		<version>1.0.6</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.ftpserver</groupId>
+		<artifactId>ftplet-api</artifactId>
+		<version>1.0.6</version>
+	</dependency>
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-api</artifactId>
+		<version>1.6.1</version>
+	</dependency>
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-log4j12</artifactId>
+		<version>1.6.1</version>
+	</dependency>
+	
+	<!-- TESTING dependencies -->
+	<dependency>
+		<groupId>org.apache.maven.plugin-testing</groupId>
+		<artifactId>maven-plugin-testing-harness</artifactId>
+		<version>1.2</version>
+		<scope>test</scope>
+	</dependency>
+	<dependency>
+	    <groupId>commons-net</groupId>
+	    <artifactId>commons-net</artifactId>
+   		 <version>3.0.1</version>
+    	<scope>test</scope>
+    </dependency>
+
+	</dependencies>
+
+</project>

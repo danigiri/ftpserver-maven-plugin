@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>cat.calidos.maven.ftpserver</groupId>
+	<artifactId>ftpserver-maven-plugin-test</artifactId>
+	<packaging>maven-plugin</packaging>
+	<version>1.0</version>
+	<name>FTP server launcher test</name>
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
+			<comments>Copyright 2011 Daniel Giribet</comments>
+		</license>
+	</licenses>
+
+	<properties>
+	  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+
+	<build>
+		<plugins>
+
+			<plugin>
+				<groupId>cat.calidos.maven.ftpserver</groupId>
+				<artifactId>ftpserver-maven-plugin</artifactId>
+				<version>1.0</version>
+				<configuration>
+					<adminUser>
+						<name>admin</name>
+						<password>admin00</password>
+					</adminUser>
+					<users>
+						<user>
+							<name>demo</name>
+							<password>demo</password>
+						</user>
+						<user>
+							<name>disabled</name>
+							<password>disabled</password>
+							<enabled>false</enabled>
+						</user>
+						<user>
+							<name>classes-root</name>
+							<password>classes-root</password>
+							<relativehomeDirectory>./classes</relativehomeDirectory>
+						</user>
+						<user>
+							<name>write-disabled</name>
+							<password>write-disabled</password>
+							<writePermission>false</writePermission>
+						</user>
+						
+					</users>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-help-plugin</artifactId>
+			<version>2.0.2</version>
+		</dependency>
+	</dependencies>
+
+</project>
+	
