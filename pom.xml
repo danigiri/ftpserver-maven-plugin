@@ -4,7 +4,7 @@
 	<groupId>cat.calidos.maven.ftpserver</groupId>
 	<artifactId>ftpserver-maven-plugin</artifactId>
 	<packaging>maven-plugin</packaging>
-	<version>1.0.0</version>
+	<version>1.0-SNAPSHOT</version>
 	<name>FTP server launcher</name>
 	<description>
 		Launches an Apache FTP server during the maven lifecycle
